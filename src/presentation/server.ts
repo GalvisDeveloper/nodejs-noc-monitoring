@@ -8,6 +8,11 @@ export class Server {
     constructor() { }
 
     static start() {
-        CronService.createJob('*/5 * * * * *', () => { new CheckService().execute('http://google.com') });
+        CronService.createJob('*/5 * * * * *', () => {
+            new CheckService(
+                () => console.log('success'),
+                (error) => console.log(error))
+                .execute('http://google.com')
+        });
     }
 }
