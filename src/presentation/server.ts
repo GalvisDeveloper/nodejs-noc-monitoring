@@ -22,7 +22,7 @@ export class Server {
         //         .execute('http://google.com')
         // });
 
-        const emailService = new EmailService();
+        const emailService = new EmailService(fileSystemLogRepository);
         // const htmlPath = path.join(__dirname, '../test.html');
         // const htmlContent = fs.readFileSync(htmlPath, 'utf8'); // Lee el contenido del archivo HTML
         // emailService.sendEmail({
