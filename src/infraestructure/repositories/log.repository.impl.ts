@@ -15,4 +15,5 @@ export class LogRepositoryImpl implements LogRepository {
     async saveLogs(log: any): Promise<void> {
         this.logDataSource.saveLogs(log);
     }
+    
 }

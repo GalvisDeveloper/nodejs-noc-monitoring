@@ -13,10 +13,7 @@ export class Server {
 
     static start() {
         CronService.createJob('*/5 * * * * *', () => {
-            new CheckService(
-                fileSystemLogRepository,
-                () => console.log('success'),
-                (error) => console.log(error))
+            new CheckService(fileSystemLogRepository, undefined, undefined)
                 .execute('http://google.com')
         });
     }
