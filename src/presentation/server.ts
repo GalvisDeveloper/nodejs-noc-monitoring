@@ -1,5 +1,6 @@
 import { envs } from "../config/plugins/envs.plugin";
 import { CheckService } from "../domain/use-cases/checks/check-service";
+import { SendEmailLogs } from "../domain/use-cases/email/send-email-logs";
 import { FileSystemDataSource } from "../infraestructure/datasources/file-system.datasource";
 import { LogRepositoryImpl } from "../infraestructure/repositories/log.repository.impl";
 import { CronService } from "./cron/cron-service";
@@ -12,6 +13,8 @@ const fileSystemLogRepository = new LogRepositoryImpl(
     new FileSystemDataSource() // it can be a database, a file system, or any other data source
 );
 
+const emailService = new EmailService();
+
 export class Server {
 
     constructor() { }
@@ -22,7 +25,7 @@ export class Server {
         //         .execute('http://google.com')
         // });
 
-        const emailService = new EmailService(fileSystemLogRepository);
+        // const emailService = new EmailService(fileSystemLogRepository);
         // const htmlPath = path.join(__dirname, '../test.html');
         // const htmlContent = fs.readFileSync(htmlPath, 'utf8'); // Lee el contenido del archivo HTML
         // emailService.sendEmail({
@@ -31,8 +34,13 @@ export class Server {
         //     htmlBody: '<p>AH AH AH AH AH AH AH AH AH AH AH AH AH AH AH AHA HA AH AH AH AH AH AH HA A GERSON ES CACHON</p>',
         // })
 
-        emailService.sendEmailWithAttachment(
-            ['gersongm0011@gmail.com', 'neibusdev@gmail.com', 'galvisdeveloper@gmail.com']
-        )
+        // emailService.sendEmailWithAttachment(
+        //     ['gersongm0011@gmail.com', 'neibusdev@gmail.com', 'galvisdeveloper@gmail.com']
+        // )
+
+        new SendEmailLogs(
+            emailService,
+            fileSystemLogRepository
+        ).execute(['gersongm0011@gmail.com', 'neibusdev@gmail.com', 'galvisdeveloper@gmail.com'])
     }
 }
