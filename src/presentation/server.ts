@@ -41,6 +41,6 @@ export class Server {
         new SendEmailLogs(
             emailService,
             fileSystemLogRepository
-        ).execute(['gersongm0011@gmail.com', 'neibusdev@gmail.com', 'galvisdeveloper@gmail.com'])
+        ).execute(['galvisdeveloper@gmail.com'])
     }
 }
