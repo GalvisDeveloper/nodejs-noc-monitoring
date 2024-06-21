@@ -1,15 +1,9 @@
 import mongoose from "mongoose";
-
-/**
-    message: string;
-    level: LogSeverityLevel;
-    createdAt?: Date;
-    origin: string;
- */
+import { LogSeverityLevel } from "../../../domain/entities/log.entity";
 
 const logSchema = new mongoose.Schema({
     message: { type: String, required: true },
-    level: { type: String, required: true, enum: ['low', 'medium', 'high'], default: 'low' },
+    level: { type: String, required: true, enum: LogSeverityLevel, default: LogSeverityLevel.LOW },
     createdAt: { type: Date, default: Date.now },
     origin: { type: String, required: true },
 })
