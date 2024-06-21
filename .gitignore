@@ -5,6 +5,7 @@
 /coverage
 /logs
 /mongo
+/postgres
 
 
 *.zip
