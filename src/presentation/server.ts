@@ -1,7 +1,11 @@
 import { envs } from "../config/plugins/envs.plugin";
+import { MongoDataSource } from "../data/mongo";
+import { LogSeverityLevel } from "../domain/entities/log.entity";
+import { LogRepository } from "../domain/repository/log.repository";
 import { CheckService } from "../domain/use-cases/checks/check-service";
 import { SendEmailLogs } from "../domain/use-cases/email/send-email-logs";
 import { FileSystemDataSource } from "../infraestructure/datasources/file-system.datasource";
+import { MongoLogDataSource } from "../infraestructure/datasources/mongo-log.datasource";
 import { LogRepositoryImpl } from "../infraestructure/repositories/log.repository.impl";
 import { CronService } from "./cron/cron-service";
 import { EmailService } from './email/email.service';
@@ -9,8 +13,9 @@ import { EmailService } from './email/email.service';
 // import * as fs from 'fs';
 // import * as path from 'path';
 
-const fileSystemLogRepository = new LogRepositoryImpl(
-    new FileSystemDataSource() // it can be a database, a file system, or any other data source
+const logRepository = new LogRepositoryImpl(
+    // new FileSystemDataSource() // it can be a database, a file system, or any other data source
+    new MongoLogDataSource()
 );
 
 const emailService = new EmailService();
@@ -19,10 +24,18 @@ export class Server {
 
     constructor() { }
 
-    static start() {
+    static async start() {
+
+        const logs = await logRepository.getLogs(LogSeverityLevel.HIGH);
+        console.log({ logs })
+
         // CronService.createJob('*/5 * * * * *', () => {
-        //     new CheckService(fileSystemLogRepository, undefined, undefined)
-        //         .execute('http://google.com')
+        //     new CheckService(
+        //         fileSystemLogRepository,
+        //         () => console.log('success'),
+        //         () => console.log('failed')
+        //     )
+        //         .execute('http://googlghjghje.com')
         // });
 
         // const emailService = new EmailService(fileSystemLogRepository);
@@ -38,9 +51,9 @@ export class Server {
         //     ['gersongm0011@gmail.com', 'neibusdev@gmail.com', 'galvisdeveloper@gmail.com']
         // )
 
-        new SendEmailLogs(
-            emailService,
-            fileSystemLogRepository
-        ).execute(['galvisdeveloper@gmail.com'])
+        // new SendEmailLogs(
+        //     emailService,
+        //     fileSystemLogRepository
+        // ).execute(['galvisdeveloper@gmail.com'])
     }
 }

@@ -1,7 +1,7 @@
 import { envs } from "./config/plugins/envs.plugin";
 import { MongoDataSource } from "./data/mongo";
-import { LogModel } from "./data/mongo/models/log.model";
-import { LogSeverityLevel } from "./domain/entities/log.entity";
+import { Server } from "./presentation/server";
+
 
 const main = async () => {
     await MongoDataSource.connect({
@@ -9,7 +9,7 @@ const main = async () => {
         dbName: envs.MONGO_DB_NAME
     })
 
-    // Server.start();
+    Server.start();
 }
 
 (async () => {
