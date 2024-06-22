@@ -2,10 +2,11 @@
 
 /node_modules
 /dist
-/coverage
 /logs
 /mongo
 /postgres
+/mongo-test
+/postgres-test
 
 
 *.zip
@@ -19,9 +20,5 @@
 *.js.LICENSE.*
 *.js.gz
 
-
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.test
