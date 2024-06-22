@@ -7,10 +7,10 @@ import { PostgresLogDataSource } from "./infraestructure/datasources/postgres.da
 
 
 const main = async () => {
-    // await MongoDataSource.connect({
-    //     mongoUrl: envs.MONGO_URL,
-    //     dbName: envs.MONGO_DB_NAME
-    // })
+    await MongoDataSource.connect({
+        mongoUrl: envs.MONGO_URL,
+        dbName: envs.MONGO_DB_NAME
+    })
 
     Server.start();
 }
