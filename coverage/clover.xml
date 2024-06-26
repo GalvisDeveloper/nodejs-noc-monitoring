@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1719367120137" clover="3.2.0">
-  <project timestamp="1719367120137" name="All files">
+<coverage generated="1719367240722" clover="3.2.0">
+  <project timestamp="1719367240722" name="All files">
     <metrics statements="44" coveredstatements="34" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="1" elements="49" coveredelements="37" complexity="0" loc="44" ncloc="44" packages="1" files="1" classes="1"/>
     <file name="log.entity.ts" path="C:\Users\crist\Escritorio\Files\Develop\Cursos\Node\noc-app\src\domain\entities\log.entity.ts">
       <metrics statements="44" coveredstatements="34" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="1"/>
