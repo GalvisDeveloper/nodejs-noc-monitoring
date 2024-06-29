@@ -25,9 +25,11 @@ describe('Check Service UseCase', () => {
         expect(successCallback).toHaveBeenCalled();
         expect(errorCallback).not.toHaveBeenCalled();
 
-        expect(mockRepository[0].saveLogs).toHaveBeenCalledWith(
-            expect.any(LogEntity)
-        )
+        mockRepository.forEach(element => {
+            expect(element.saveLogs).toHaveBeenCalledWith(
+                expect.any(LogEntity)
+            )
+        });
 
     });
 
@@ -39,9 +41,11 @@ describe('Check Service UseCase', () => {
         expect(successCallback).not.toHaveBeenCalled();
         expect(errorCallback).toHaveBeenCalled();
 
-        expect(mockRepository[0].saveLogs).toHaveBeenCalledWith(
-            expect.any(LogEntity)
-        )
+        mockRepository.forEach(element => {
+            expect(element.saveLogs).toHaveBeenCalledWith(
+                expect.any(LogEntity)
+            )
+        });
 
     });
 
