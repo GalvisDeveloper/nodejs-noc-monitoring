@@ -16,12 +16,9 @@ export class CheckService implements CheckServiceUseCase {
         private readonly errorCallback: ErrorCallback
     ) { }
 
-    async execute(url: string) {
+    async execute(url: string): Promise<boolean> {
         try {
-            const req = await fetch(url);
-            if (!req.ok) {
-                throw new Error(`Error on check service ${url}`);
-            }
+            await fetch(url);
 
             const log = new LogEntity({ message: `Service ${url} is up`, level: LogSeverityLevel.LOW, origin: 'check-service.ts' });
             this.LogRepository.saveLogs(log)
@@ -29,7 +26,6 @@ export class CheckService implements CheckServiceUseCase {
 
             return true;
         } catch (error) {
-
             const log = new LogEntity({ message: `${error} on ${url}`, level: LogSeverityLevel.HIGH, origin: 'check-service.ts' });
             this.LogRepository.saveLogs(log)
             this.errorCallback && this.errorCallback(`${error} on ${url}`);

@@ -24,10 +24,7 @@ export class CheckServiceMultiple implements CheckServiceMultipleUseCase {
 
     async execute(url: string) {
         try {
-            const req = await fetch(url);
-            if (!req.ok) {
-                throw new Error(`Error on check service ${url}`);
-            }
+            await fetch(url);
 
             const log = new LogEntity({ message: `Service ${url} is up`, level: LogSeverityLevel.LOW, origin: 'check-service.ts' });
             this.callLogRepository(log)
