@@ -1,8 +1,7 @@
-import nodemailer from 'nodemailer';
+import { LogEntity } from '../../../../src/domain/entities/log.entity';
+import { LogRepository } from '../../../../src/domain/repository/log.repository';
 import { SendEmailLogs } from '../../../../src/domain/use-cases/email/send-email-logs';
 import { EmailService } from '../../../../src/presentation/email/email.service';
-import { LogRepository } from '../../../../src/domain/repository/log.repository';
-import { LogEntity } from '../../../../src/domain/entities/log.entity';
 
 
 describe('SendEmailLogs test', () => {

@@ -16,10 +16,7 @@ export class SendEmailLogs implements SendLogEmailUseCase {
 
     async execute(to: string | string[]): Promise<boolean> {
         try {
-            const sent = await this.emailService.sendEmailWithAttachment(to);
-            if (!sent) {
-                throw new Error('Failed to send email');
-            }
+            await this.emailService.sendEmailWithAttachment(to);
 
             const log = new LogEntity({
                 message: `Email sent to ${to}`,

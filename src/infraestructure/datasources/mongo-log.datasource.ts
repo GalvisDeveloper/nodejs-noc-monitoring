@@ -8,7 +8,7 @@ export class MongoLogDataSource implements LogDataSource {
 
         const newLog = await LogModel.create(log)
         // await newLog.save();
-        console.log({ LogMongoCreated: newLog })
+        console.log("LogMongoCreated:", newLog)
 
     }
 
