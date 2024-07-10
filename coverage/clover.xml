@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1720580310204" clover="3.2.0">
-  <project timestamp="1720580310204" name="All files">
-    <metrics statements="305" coveredstatements="303" conditionals="37" coveredconditionals="34" methods="18" coveredmethods="18" elements="360" coveredelements="355" complexity="0" loc="305" ncloc="305" packages="8" files="10" classes="10"/>
+<coverage generated="1720581311882" clover="3.2.0">
+  <project timestamp="1720581311882" name="All files">
+    <metrics statements="324" coveredstatements="322" conditionals="40" coveredconditionals="37" methods="21" coveredmethods="21" elements="385" coveredelements="380" complexity="0" loc="324" ncloc="324" packages="9" files="11" classes="11"/>
     <package name="config.plugins">
       <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="envs.plugin.ts" path="C:\Users\crist\Escritorio\Files\Develop\Cursos\Node\noc-app\src\config\plugins\envs.plugin.ts">
@@ -117,12 +117,12 @@
         <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
         <line num="23" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="24" count="12" type="stmt"/>
-        <line num="25" count="12" type="stmt"/>
-        <line num="26" count="12" type="stmt"/>
-        <line num="27" count="12" type="stmt"/>
-        <line num="28" count="12" type="stmt"/>
-        <line num="29" count="12" type="stmt"/>
+        <line num="24" count="39" type="stmt"/>
+        <line num="25" count="39" type="stmt"/>
+        <line num="26" count="39" type="stmt"/>
+        <line num="27" count="39" type="stmt"/>
+        <line num="28" count="39" type="stmt"/>
+        <line num="29" count="39" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
         <line num="31" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="32" count="25" type="cond" truecount="2" falsecount="0"/>
@@ -359,6 +359,31 @@
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="infraestructure.repositories">
+      <metrics statements="19" coveredstatements="19" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
+      <file name="log.repository.impl.ts" path="C:\Users\crist\Escritorio\Files\Develop\Cursos\Node\noc-app\src\infraestructure\repositories\log.repository.impl.ts">
+        <metrics statements="19" coveredstatements="19" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
       </file>
     </package>
   </project>
