@@ -92,6 +92,5 @@ describe('FileSystemDataSource Test', () => {
         expect(logsMedium).toEqual(expect.arrayContaining([logMedium]));
         expect(logsHigh).toEqual(expect.arrayContaining([logHigh]));
     })
-
     
 })
